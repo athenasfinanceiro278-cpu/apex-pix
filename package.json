@@ -1,0 +1,14 @@
+{
+  "name": "apex-pix",
+  "version": "1.0.0",
+  "description": "API Pix Apex",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Apex Economic Advisory LTDA",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
