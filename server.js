@@ -1,14 +1,15 @@
 const express = require("express");
 const axios = require("axios");
 
-app.get("/health", (req, res) => res.status(200).send("ok"));
-
 const app = express();
 app.use(express.json());
 
 const WITETEC_BASE_URL = "https://api.witetec.net";
 
 // Healthcheck
+app.get("/health", (req, res) => res.status(200).send("ok"));
+
+// Home
 app.get("/", (req, res) => {
   res.send("API Apex rodando 🚀");
 });
@@ -65,7 +66,7 @@ app.post("/criar-pix", async (req, res) => {
   }
 });
 
-// Webhook (para a WiteTec chamar)
+// Webhook
 app.post("/witetec/webhook", (req, res) => {
   console.log("Webhook recebido:", JSON.stringify(req.body));
   res.sendStatus(200);
