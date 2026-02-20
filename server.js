@@ -1,6 +1,8 @@
 const express = require("express");
 const axios = require("axios");
 
+app.get("/health", (req, res) => res.status(200).send("ok"));
+
 const app = express();
 app.use(express.json());
 
@@ -71,4 +73,9 @@ app.post("/witetec/webhook", (req, res) => {
 
 // Railway
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log("Servidor rodando na porta " + PORT));
+const PORT = Number(process.env.PORT) || 8080;
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Servidor rodando em http://${HOST}:${PORT}`);
+});
